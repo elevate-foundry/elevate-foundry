@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Chatbot</title>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>This is a simple webpage hosted on Saudade Cloud.</p>
-    <button onclick="sendMessage()">Click me</button>
-    <p id="message"></p>
-
+    <div id="chat-container">
+        <div id="chat-display"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
