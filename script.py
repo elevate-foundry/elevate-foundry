@@ -10,7 +10,9 @@ def index():
 def send_message():
     data = request.get_json()
     message = data['message']
-    return jsonify({'response': f'Message received: {message}'})
+    # Create a JSON response containing the received message
+    response = {'response': f'Message received: {message}'}
+    return jsonify(response)
 
 if __name__ == '__main__':
     app.run(debug=True)
