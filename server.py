@@ -6,8 +6,13 @@ import os
 
 app = Flask(__name__)
 
-openai_api_key = pd.read_csv('openai_api_key.csv', header=None)
-api_key = openai_api_key.iloc[0, 0]
+# Retrieve OpenAI API key from GitHub secret
+openai_api_key = os.getenv('OPENAI_API_KEY')
+
+if openai_api_key is None:
+    raise ValueError("OpenAI API key not found in environment variables.")
+
+# Now you can use openai_api_key as needed in your application
 
 @app.route("/")
 def index():
